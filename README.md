@@ -1,17 +1,14 @@
-# Hugo Profile | [Wiki Page](https://github.com/gurusabarish/hugo-profile/wiki)
+# Portfolio 
 
-[![Twitter](https://img.shields.io/twitter/url?label=Tweet&style=social&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile) [![GitHub forks](https://img.shields.io/github/forks/gurusabarish/hugo-profile?style=plastic)](https://github.com/gurusabarish/hugo-profile/network) [![GitHub stars](https://img.shields.io/github/stars/gurusabarish/hugo-profile?style=plastic)](https://github.com/gurusabarish/hugo-profile/stargazers)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5c1dcb34-cada-4c80-82b7-cfdbdbd7c774/deploy-status)](https://app.netlify.com/sites/hugo-profile/deploys)
-![Latest Release](https://img.shields.io/github/v/release/gurusabarish/hugo-profile?include_prereleases)
-![Last Commit](https://img.shields.io/github/last-commit/gurusabarish/hugo-profile)
-![Open Issues](https://img.shields.io/github/issues/gurusabarish/hugo-profile?color=important)
-![Open Pull Requests](https://img.shields.io/github/issues-pr/gurusabarish/hugo-profile?color=yellowgreen)
-![License](https://img.shields.io/github/license/gurusabarish/hugo-profile)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0a76b59f-67be-47da-bd3b-c8c26214e967/deploy-status)](https://app.netlify.com/sites/anky209e/deploys)
+![Latest Release](https://img.shields.io/github/v/release/Anky209e/portfolio?include_prereleases)
+![Last Commit](https://img.shields.io/github/last-commit/Anky209e/portfolio)
+![Open Issues](https://img.shields.io/github/issues/Anky209e/portfolio?color=important)
+![Open Pull Requests](https://img.shields.io/github/issues-pr/Anky209e/portfolio?color=yellowgreen)
+![License](https://img.shields.io/github/license/Anky209e/portfolio)
 
 A high performance and mobile first hugo template for personal portfolio and blog
 
-- ### Example Site: [https://hugo-profile.netlify.app](https://hugo-profile.netlify.app)
 
 # Features
 - Fully Responsive
