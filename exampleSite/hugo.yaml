@@ -197,7 +197,7 @@ params:
           - Improved Lunar landing algorithm using Reinforcement learning and Custom State of the art Algorithms.
 
           - Worked on Range operations involving software development and machine learning tasks.
-          
+
           - Developed back-end solutions for Lunar landing using custom Deep Q learning Algorithm.
 
 
@@ -335,15 +335,15 @@ params:
   contact:
     enable: true
     # title: "Custom Name"
-    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+    content: My inbox is always open. Whether you have a question or just want to say hi :)
     btnName: Mail me
     btnLink: mailto:nasaankit01@gmail.com
-    # formspree:
-    #   enable: true # `contact.email` value will be ignored
-    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
-    #   emailCaption: "Enter your email address"
-    #   messageCaption: "Enter your message here"
-    #   messageRows: 5
+    formspree:
+      enable: true # `contact.email` value will be ignored
+      formId: xblggowg # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+      emailCaption: "Enter your email address"
+      messageCaption: "Enter your message here"
+      messageRows: 5
 
   footer:
     recentPosts:
@@ -353,11 +353,9 @@ params:
       enable: true
       disableFeaturedImage: false
     socialNetworks:
-      github: https://github.com
-      linkedin: https://linkedin.com
-      twitter: https://twitter.com
-      instagram: https://instagram.com
-      facebook: https://facebook.com
+      github: https://github.com/Anky209e
+      linkedin: https://www.linkedin.com/in/anky209e/
+
 
   # List pages like blogs and posts
   listPages:
