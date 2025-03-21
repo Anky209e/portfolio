@@ -161,7 +161,8 @@ params:
     title: "About Me"
     image: "/images/me.png"
     content: |-
-      Hi, I'm Ankit Kumar, a Software Engineer specializing in backend development, machine learning, and AI. I’ve built a multilingual RAG system using LangChain and FAISS and developed a Django web app integrating 10+ ML models. During my internship at ISRO, I optimized Lunar landing algorithms using Deep Reinforcement Learning. I’m experienced in cloud technologies, 
+      Hi, I'm Ankit Kumar, a Software Engineer specializing in backend development, machine learning, and AI. 
+      I’ve built a multilingual RAG system using LangChain and FAISS and developed a Django web app integrating 10+ ML models. During my internship at ISRO, I optimized Lunar landing algorithms using Deep Reinforcement Learning. I’m experienced in cloud technologies, 
       API design, and DevOps, always eager to solve complex problems and build innovative solutions.
     skills:
       enable: true
@@ -169,7 +170,7 @@ params:
       items:
         - "Machine Learning"
         - "Reinforcement Learning"
-        - "Web automation"
+        - "Data Science"
         - "Python"
         - "Devops"
         - "Mlops"
@@ -180,14 +181,20 @@ params:
     # title: "Custom Name"
     items:
       - job: "Project Intern"
-        company: "ISRO"
+        company: "ISRO-Indian Space research organisation"
         companyUrl: "https://www.isro.gov.in"
         date: "May 2024 - July 2024"
         featuredLink:
           enable: true
           name: "View the project"
           url: "https://docs.google.com/document/d/1uhJ3qluwSfv4Fjt-8RPURmRJHRbLNDZNzZUYC_tpjN8/edit?usp=sharing"
-        content: "Optimized Lunar landing algorithms at ISRO using Deep Reinforcement Learning and custom state-of-the-art models."
+        content: /
+          I Enhanced Lunar landing algorithms at ISRO using Deep Reinforcement Learning and custom Q-learning models.
+
+          - Improved Lunar landing algorithm using Reinforcement learning and Custom State of the art Algorithms.
+          - Worked on Range operations involving software development and machine learning tasks.
+          - Developed back-end solutions for Lunar landing using custom Deep Q learning Algorithm.
+
 
       - job: "Backend Developer Intern"
         company: "Ecowiser"
@@ -213,14 +220,14 @@ params:
         info:
           enable: false
         featuredLink:
-          enable: false
+          enable: true
           url: "https://example.com"
         content: |
           I implemented and optimized machine learning models at Velozity using PyTorch and TensorFlow, focusing on NLP, image classification, and time series forecasting.
 
           - Implemented machine learning algorithms and models using PyTorch, TensorFlow, and other frameworks to analyze and solve real-world problems. .
 
-          - – Contributed to the development and optimization of neural network architectures for tasks such as image classification, natural language processing, and time series forecasting
+          - Contributed to the development and optimization of neural network architectures for tasks such as image classification, natural language processing, and time series forecasting
 
   # Education
   education:
@@ -228,64 +235,45 @@ params:
     # title: "Custom Name"
     index: false
     items:
-      - title: "Master of Business Administration"
+      - title: "Bachelor of Technology(Computer Science and Engineering-Data Science(ML and AI))"
         school:
-          name: "University of California, Berkeley"
-          url: "https://example.org"
-        date: "2013 - 2015"
-        GPA: "3.8 out of 5.0"
+          name: "Lovely Professional University,Jalandhar"
+          url: "https://www.lpu.in"
+        date: "2020 - 2024"
+        GPA: "7.38 out of 10"
         content: |-
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-      - title: "Bachelor of Science in Computer Science"
-        school:
-          name: "Massachusetts Institute of Technology"
-          url: "https://example.org"
-        date: "2009 - 2013"
-        GPA: "3.9 out of 5.0"
-        content: |-
-          I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-          - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-          - Face mask detection using a single convolutional neural network.
-
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+          I Developed expertise in machine learning, deep learning, and AI through hands-on projects and coursework. 
+            - Built and deployed ML models using Python, TensorFlow, and PyTorch for various real-world applications.
+            - Gained practical knowledge of data analysis, NLP, and reinforcement learning through academic and personal projects.
         featuredLink:
           enable: true
           name: "My academic record"
-          url: "https://example.com"
+          url: "https://drive.google.com/file/d/1YB9MsyEBFz1kGMui4_unl1SUbg2caIO3/view?usp=sharing"
+        
       - title: "High School"
         school:
-          name: "Thomas Jefferson High School for Science and Technology."
-          url: "https://example.org"
-        GPA: "4.2 out of 5.0"
-        featuredLink:
-          enable: true
-          url: "https://example.com"
+          name: "Crescent Public School"
+          url: "http://www.cpsfatehabad.com"
+        date: "2019 - 2020"
+        GPA: "8.0 out of 10"
+        content: |-
+          Completed Senior Secondary education with a focus on Science (Physics, Chemistry, and Mathematics), 
+          scoring highest in Hindustani Music Vocal (92), along with excellence in Work Experience, Health & Physical Education, and General Studies.
+        
 
   # Achievements
   achievements:
     enable: true
     # title: "Custom Name"
     items:
-      - title: Google kickstart runner
-        content: I solved all problems with optimal solution.
-        url: https://example.com
-        image: /images/achievement.jpg
-      - title: Facebook Hackathon Winner
-        content: Developed a product using Artificial Intelligence.
-        image: /images/achievement.jpg
-      - title: Hugo Profile
-        content: Developed a theme and getting 1K+ downloads per month.
-        url: "https://github.com/gurusabarish/hugo-profile"
-        image: /images/achievement.jpg
-      - title: Microsoft Imagine Runner
-        content: We are developed a product which can help others.
-      - title: Google Summer of Code
-        content: Contributed to a open source project.
-        url: https://example.com
+      - title: UpGrad Hackathon Winner
+        content: Created Django app for Fake news detection using LSTM and retraining pipeline and got first prize.
+        url: https://github.com/Anky209e/upgrad_hackathon_uwu
+        image: /images/upgrad.jpg
+      - title: Hacktoberfest 2020 Contributer
+        content: Contributed to biggest open source festivel and completed all goals. 
+        image: /images/hacktoberfest.jpg
+
 
   # projects
   projects:
