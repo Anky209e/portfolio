@@ -160,6 +160,7 @@ params:
     enable: true
     title: "About Me"
     image: "/images/hero.svg"
+    roundImage: false
     content: |-
       Hi, I'm Ankit Kumar, a Software Engineer specializing in backend development, machine learning, and AI. 
       I’ve built a multilingual RAG system using LangChain and FAISS and developed a Django web app integrating 10+ ML models. During my internship at ISRO, I optimized Lunar landing algorithms using Deep Reinforcement Learning. I’m experienced in cloud technologies, 
