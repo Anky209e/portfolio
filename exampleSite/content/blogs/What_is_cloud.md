@@ -1,8 +1,13 @@
 ---
-title: What is cloud?
-date: 2022-06-11 3:37 -500
-categories: [AWS,Cloud,Notes]
-tags: [aws,cloud,whatiscloud,notes]
+title: "What is cloud?"
+date: 2025-02-03T19:53:33+05:30
+draft: false
+author: "ankit"
+tags:
+  - Cloud Computing
+image: /images/post.jpg
+description: "Explanation about Cloud Computing"
+toc: 
 ---
 
 # What is Cloud Computing?
