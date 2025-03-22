@@ -140,7 +140,7 @@ params:
     image: /images/me.png
     bottomImage:
       enable: true
-    roundImage: true # Make hero image circular | default false
+    # roundImage: true # Make hero image circular | default false
     button:
       enable: true
       name: "Resume"
