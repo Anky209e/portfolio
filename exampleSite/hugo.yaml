@@ -322,18 +322,18 @@ params:
           - icon: fab fa-github
             url: https://github.com/Anky209e/pdf_rag_system
 
-      - title: Foxer
-        content: Developed Foxer, a 2D platformer in Godot featuring animations, sound, and enemies, centered on a fox’s journey to discover its true purpose.
-        image: /images/projects/foxer.png
+      - title: AquaQuest
+        content: Aqua's Quest is a fun educational platformer for kids (5–6 yrs) that teaches the water cycle and groundwater conservation through four interactive levels. Each stage includes simple tooltips, mini-quizzes, and concept scenes to reinforce learning through play.
+        image: /images/projects/aquaquest.png
         featured:
           name: Download
-          link: https://github.com/Anky209e/foxer
+          link: https://drive.google.com/file/d/12mrd9j5UxHpVS5P8MW81iFo9eM14w_XI/view?usp=sharing
         badges:
           - "Godot"
           - "Game development"
         links:
           - icon: fab fa-github
-            url: https://github.com/Anky209e/foxer
+            url: https://drive.google.com/file/d/12mrd9j5UxHpVS5P8MW81iFo9eM14w_XI/view?usp=sharing
 
   #Contact
   contact:
