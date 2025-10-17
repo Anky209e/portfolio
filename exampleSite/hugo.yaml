@@ -59,9 +59,9 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Portfolio"
-  description: Text about my cool site
-  # staticPath: ""  # The path to serve the static files from
+  title: "Anky209e Portfolio website"
+  description: Click to know more about Ankit - a Software Engineer specializing in backend development, machine learning, and AI.
+  # staticPath: ""  # The path to serve the static files from 
   favicon: "/fav.png"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
@@ -292,7 +292,7 @@ params:
         image: /images/projects/modelsmith.png
         featured:
           name: Visit Site
-          link: https://modelsmith.up.railway.app
+          link: https://modelsmith.app
         badges:
           - "Django"
           - "Deep Learning"
