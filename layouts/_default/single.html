@@ -1,9 +1,9 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Params.description }}">
-<link rel="stylesheet" href="{{.Site.Params.staticPath}}css/single.css">
+<link rel="stylesheet" href="{{ (printf "%scss/single.css" (.Site.Params.staticPath | default "/")) | relURL }}">
 
 <!-- fontawesome -->
-<script defer src="{{.Site.Params.staticPath}}fontawesome-6/all-6.4.2.js"></script>
+<script defer src="{{ (printf "%sfontawesome-6/all-6.4.2.js" (.Site.Params.staticPath | default "/")) | relURL }}"></script>
 {{ end }}
 
 {{ define "title" }}
@@ -115,7 +115,7 @@
 <div class="progress">
   <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
-<Script src="{{.Site.Params.staticPath}}js/scrollProgressBar.js"></script>
+<script src="{{ (printf "%sjs/scrollProgressBar.js" (.Site.Params.staticPath | default "/")) | relURL }}"></script>
 {{ end }}
 
 <script>
@@ -148,7 +148,7 @@
 </script>
 
 {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
-<script src="{{.Site.Params.staticPath}}js/readingTime.js"></script>
+<script src="{{ (printf "%sjs/readingTime.js" (.Site.Params.staticPath | default "/")) | relURL }}"></script>
 {{end}}
 
 {{ end }}
