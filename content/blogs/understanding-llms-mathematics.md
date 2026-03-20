@@ -31,7 +31,7 @@ Where:
 - $b$ is the bias vector
 - $\sigma$ is the activation function
 
-The activation function introduces non-linearity, allowing the network to learn complex patterns. Common choices include ReLU (Rectified Linear Unit): $\sigma(x) = \max(0, x)$ and the more traditional sigmoid: $\sigma(x) = \frac{1}{1 + e^{-x}}$.
+The activation function introduces non-linearity, allowing the network to learn complex patterns. Common choices include ReLU (Rectified Linear Unit): $\sigma(x) = \max(0, x)$ and the more traditional sigmoid: $\sigma(x) = \dfrac{1}{1 + e^{-x}}$.
 
 ## From RNNs to Transformers
 

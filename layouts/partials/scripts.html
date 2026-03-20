@@ -57,21 +57,25 @@
 {{ if or (.Params.mathjax | default false) (.Site.Params.mathjax) }}
 
 {{ "<!-- MathJax -->" | safeHTML }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" integrity="sha384-M5jmNxKC9EVnuqeMwRHvFuYUE8Hhp0TgBruj/GZRkYtiMrCRgH7yvv5KY+Owi7TW" crossorigin="anonymous"></script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['\\(','\\)']],
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true,
+      packages: {'[+]': ['ams', 'amsb', 'noundefined']}
+    },
+    options: {
+      enableMenu: false
+    },
+    startup: {
+      ready: function() {
+        MathJax.startup.defaultReady();
       }
-    });
+    }
+  };
 </script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ end }}
 
 {{ if (.Site.Params.cloudinary_cloud_name | default false) }}
