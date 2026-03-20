@@ -1,15 +1,93 @@
-/* light mode */
-.light > *{
+:root {
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+html {
+    background-color: var(--background-color) !important;
+}
+
+body {
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
 }
 
-.light > #footer-socialNetworks-github-svg-path{
+/* Global Border Radius for a premium look */
+.card, 
+.btn, 
+.form-control, 
+.img-thumbnail, 
+.nav-pills .nav-link, 
+.badge,
+.dropdown-menu,
+.featuredLink a,
+.viewer-enabled-image {
+    border-radius: var(--border-radius) !important;
+}
+
+/* Ensure consistent alignment in hero section */
+#hero .row {
+    align-items: center;
+}
+
+#hero a.btn {
+    margin-top: 30px !important; /* Unified margin */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero a.btn.social-icon {
+    width: 42px;
+    height: 42px;
+    padding: 0 !important;
+}
+
+/* Slightly softer radius for small elements like badges */
+.badge {
+    border-radius: var(--border-radius-sm) !important;
+    padding: 0.5em 0.8em;
+}
+
+/* Ensure all elements inherit theme colors unless overridden */
+* {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Reset containers and cards to use theme colors */
+.container, .card, section, nav, footer, .navbar, .modal-content {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.card, .viewer-enabled-image {
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+html.dark .card, html.dark .viewer-enabled-image {
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover, .viewer-enabled-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+#footer-socialNetworks-github-svg-path{
     fill: none;
 }
 
-/* dark mode */
-.dark {
+/* dark mode variable overrides */
+html.dark {
     --background-color: var(--background-color-dark) !important;
     --secondary-background-color: var(--secondary-background-color-dark) !important;
     --text-color: var(--text-color-dark) !important;
@@ -19,7 +97,7 @@
     --secondary-color: var(--secondary-color-dark);
 }
 
-.dark #footer-socialNetworks-github-svg-path{
+html.dark #footer-socialNetworks-github-svg-path{
     fill: #FFFFFF;
 }
 
@@ -37,20 +115,46 @@
 
 button#theme-toggle {
     border: none;
+    background: transparent;
     font-size: 26px;
     margin: auto 4px;
+    cursor: pointer;
 }
 
-body.dark #moon {
+html.dark #moon {
     vertical-align: middle;
     display: none;
 }
 
-body:not(.dark) #sun {
+html:not(.dark) #sun {
     display: none;
 }
 
-body *::selection {
+*::selection {
     color: var(--text-color) !important;
     background-color: var(--primary-color) !important;
+}
+
+/* Custom scrollbar using theme variables */
+body::-webkit-scrollbar {
+    height: 0px;
+    width: 8px;
+    background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background-color: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #b0b0b0;
+    outline: 1px solid var(--background-color);
+}
+
+#search-content::-webkit-scrollbar {
+    width: .5em;
+    height: .1em;
+    background-color: var(--background-color);
 }

@@ -23,9 +23,9 @@
     <div class="card-group p-4">
         <div class="row justify-content-center">
             {{ range .Params.galleryImages }}
-            <div class="col-md-4 p-0 m-0">
-                <div class="card p-0 m-0 border-0">
-                    <img class="w-100 {{if .Params.viewer | default true}}viewer-enabled-image{{end}}" height="280px" src="{{ .src }}">
+            <div class="col-md-4 p-2">
+                <div class="card p-0 m-0 border-0 bg-transparent">
+                    <img class="w-100 {{if .Params.viewer | default true}}viewer-enabled-image{{end}}" src="{{ .src }}">
                 </div>
             </div>
             {{ end }}

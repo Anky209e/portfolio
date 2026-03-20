@@ -42,17 +42,12 @@ git clone https://github.com/anky209e/portfolio.git
 cd portfolio
 ```
 
-2. Navigate to the example site:
+2. Run the development server:
 ```bash
-cd exampleSite
+hugo server
 ```
 
-3. Run the development server:
-```bash
-hugo server --themesDir ../..
-```
-
-4. Open `http://localhost:1313` in your browser
+3. Open `http://localhost:1313` in your browser
 
 ## ⚙️ Configuration
 

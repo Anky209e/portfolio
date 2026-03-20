@@ -3,7 +3,7 @@
     <span class="px-1">
         <a href="{{ .url }}"
             {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
-            class="btn social-icon"
+            class="btn social-icon" aria-label="{{ .icon }}"
         >
             <i class="{{ .icon }}"></i>
         </a>
@@ -14,9 +14,9 @@
     <span class="px-1">
         <a href="{{ .url }}"
             {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
-            class="btn social-icon"
+            class="btn social-icon" aria-label="{{ .url }}"
         >
-            <img src="{{ .icon }}">
+            <img src="{{ .icon }}" alt="{{ .url }}">
         </a>
     </span>
     {{ end }}

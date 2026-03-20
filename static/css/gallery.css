@@ -1,3 +1,5 @@
 .viewer-enabled-image {
     cursor: zoom-in;
+    object-fit: cover;
+    height: 280px;
 }

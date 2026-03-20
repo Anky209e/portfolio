@@ -1,0 +1,9 @@
+<script>
+    (function() {
+        const theme = localStorage.getItem("pref-theme");
+        const defaultTheme = "{{ .Site.Params.theme.defaultTheme }}";
+        if (theme === "dark" || (!theme && defaultTheme === "dark") || (!theme && !defaultTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    })();
+</script>
