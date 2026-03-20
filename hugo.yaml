@@ -153,6 +153,8 @@ params:
       fontAwesomeIcons:
         - icon: fab fa-github
           url: https://github.com/anky209e
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/anky209e/
       customIcons:
         - icon: /fav.png
           url: "https://modelsmith.up.railway.app"
