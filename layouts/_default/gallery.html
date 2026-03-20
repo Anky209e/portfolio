@@ -1,10 +1,10 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
-<!-- <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all"> -->
+<!-- <link rel="stylesheet" href="{{ .Site.Params.staticPath }}css/list.css" media="all"> -->
 {{ if .Params.viewer | default true }}
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/gallery.css">
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/viewer/viewer.min.css">
-<script src="{{ .Site.Params.staticPath }}/viewer/viewer.min.js"></script>
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}css/gallery.css">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}viewer/viewer.min.css">
+<script src="{{ .Site.Params.staticPath }}viewer/viewer.min.js"></script>
 {{ end }}
 
 {{ end }}
@@ -25,7 +25,7 @@
             {{ range .Params.galleryImages }}
             <div class="col-md-4 p-2">
                 <div class="card p-0 m-0 border-0 bg-transparent">
-                    <img class="w-100 {{if .Params.viewer | default true}}viewer-enabled-image{{end}}" src="{{ .src }}">
+                    <img class="w-100 {{if .Params.viewer | default true}}viewer-enabled-image{{end}}" src="{{ .src | relURL }}">
                 </div>
             </div>
             {{ end }}
