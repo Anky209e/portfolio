@@ -1,6 +1,5 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
-<!-- <link rel="stylesheet" href="{{ (printf "%scss/list.css" (.Site.Params.staticPath | default "/")) | relURL }}" media="all"> -->
 {{ if .Params.viewer | default true }}
 <link rel="stylesheet" href="{{ (printf "%scss/gallery.css" (.Site.Params.staticPath | default "/")) | relURL }}">
 <link rel="stylesheet" href="{{ (printf "%sviewer/viewer.min.css" (.Site.Params.staticPath | default "/")) | relURL }}">
@@ -22,12 +21,19 @@
     </div>
     <div class="card-group p-4">
         <div class="row justify-content-center">
-            {{ range .Params.galleryImages }}
+            {{ $galleryPath := "static/images/gallery" }}
+            {{ $viewerEnabled := .Params.viewer | default true }}
+            {{ range readDir $galleryPath }}
+            {{ if not .IsDir }}
+            {{ $ext := lower .Name }}
+            {{ if or (hasSuffix $ext ".jpg") (hasSuffix $ext ".jpeg") (hasSuffix $ext ".png") (hasSuffix $ext ".gif") (hasSuffix $ext ".webp") }}
             <div class="col-md-4 p-2">
                 <div class="card p-0 m-0 border-0 bg-transparent">
-                    <img class="w-100 {{if .Params.viewer | default true}}viewer-enabled-image{{end}}" src="{{ .src | relURL }}">
+                    <img class="w-100{{ if $viewerEnabled }} viewer-enabled-image{{ end }}" src="{{ printf "/images/gallery/%s" .Name | relURL }}" loading="lazy">
                 </div>
             </div>
+            {{ end }}
+            {{ end }}
             {{ end }}
         </div>
     </div>
