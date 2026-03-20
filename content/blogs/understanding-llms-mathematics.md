@@ -2,7 +2,7 @@
 title: "Understanding Large Language Models: Mathematics and Architecture"
 date: 2024-01-24T10:00:00+05:30
 draft: false
-author: "Ankit Kumar"
+author: "ankit"
 tags:
   - Machine Learning
   - LLM
