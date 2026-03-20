@@ -9,7 +9,7 @@ tags:
   - Deep Learning
   - Mathematics
   - NLP
-image: /images/mathjax.png
+image: /images/llm.jpg
 description: "A deep dive into the mathematics and architecture behind Large Language Models, from transformers to attention mechanisms."
 toc: true
 mathjax: true
