@@ -194,10 +194,10 @@ params:
         info:
           enable: true
           content: I worked as a Project Intern at ISRO.
-        content:
-          I Enhanced Lunar landing algorithms at ISRO using Deep Reinforcement Learning and custom Q-learning models.
+        content: |-
+          Enhanced Lunar landing algorithms at ISRO using Deep Reinforcement Learning and custom Q-learning models.
 
-              - Improved Lunar landing algorithm using Reinforcement Learning and Custom State of the Art algorithms.
+          - Improved Lunar landing algorithm using Reinforcement Learning and Custom State of the Art algorithms.
 
           - Worked on Range operations involving software development and machine learning tasks.
 
