@@ -8,7 +8,7 @@ tags:
   - Mechanical Engineering
   - Python
   - Data Analysis
-image: /images/post.jpg
+image: /images/tensile.jpg
 description: "A comprehensive guide to tensile testing analysis, covering stress-strain relationships, Young's Modulus, Yield Strength, and how machine learning techniques improve material property calculations."
 toc: true
 mathjax: true
