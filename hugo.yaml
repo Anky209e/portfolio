@@ -137,7 +137,7 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Ankit Kumar"
-    subtitle: "I build things for the web"
+    subtitle: "Backend Developer & ML Engineer"
     content: "A passionate Software Engineer with expertise in backend development, AI, and ML, specializing in building scalable solutions and innovative models."
     image: /images/me.png
     bottomImage:
@@ -173,10 +173,10 @@ params:
       items:
         - "Machine Learning"
         - "Reinforcement Learning"
-        - "Data Science"
-        - "Python"
-        - "Devops"
-        - "Mlops"
+        - "Django"
+        - "LangChain"
+        - "PyTorch"
+        - "Docker"
 
   # Experience
   experience:
@@ -197,11 +197,11 @@ params:
         content:
           I Enhanced Lunar landing algorithms at ISRO using Deep Reinforcement Learning and custom Q-learning models.
 
-          - Improved Lunar landing algorithm using Reinforcement learning and Custom State of the art Algorithms.
+              - Improved Lunar landing algorithm using Reinforcement Learning and Custom State of the Art algorithms.
 
           - Worked on Range operations involving software development and machine learning tasks.
 
-          - Developed back-end solutions for Lunar landing using custom Deep Q learning Algorithm.
+          - Developed back-end solutions for Lunar landing using custom Deep Q-Learning algorithm.
 
 
       - job: "Backend Developer Intern"
@@ -234,7 +234,7 @@ params:
         content: |-
           I implemented and optimized machine learning models at Velozity using PyTorch and TensorFlow, focusing on NLP, image classification, and time series forecasting.
 
-          - Implemented machine learning algorithms and models using PyTorch, TensorFlow, and other frameworks to analyze and solve real-world problems. .
+          - Implemented machine learning algorithms and models using PyTorch, TensorFlow, and other frameworks to analyze and solve real-world problems.
 
           - Contributed to the development and optimization of neural network architectures for tasks such as image classification, natural language processing, and time series forecasting
 
@@ -279,8 +279,8 @@ params:
         content: Created Django app for Fake news detection using LSTM and retraining pipeline and got first prize.
         url: https://github.com/Anky209e/upgrad_hackathon_uwu
         image: /images/upgrad.jpg
-      - title: Hacktoberfest 2020 Contributer
-        content: Contributed to biggest open source festivel and completed all goals. 
+      - title: Hacktoberfest 2020 Contributor
+        content: Contributed to biggest open source festival and completed all goals. 
         image: /images/hacktoberfest.jpg
 
 
@@ -303,7 +303,7 @@ params:
           - "Python"
         links:
           - icon: fa fa-envelope
-            url: mailto:nasaankit01@gmail.coom
+            url: mailto:nasaankit01@gmail.com
           - icon: fab fa-github
             url: https://github.com/anky209e/modelsmith
 
