@@ -25,10 +25,91 @@
 <!-- font configuration -->
 <link rel="stylesheet" href="{{ (printf "%scss/font.css" (.Site.Params.staticPath | default "/")) | relURL }}" media="all">
 
-<!-- Internal templates -->
+<!-- Robots Meta Tags for SEO -->
+{{ if .Draft }}
+<meta name="robots" content="noindex, nofollow">
+{{ else }}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+{{ end }}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .Description }}{{ .Description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}">
+<meta property="og:image" content="{{ if .Params.image }}{{ .Params.image | absURL }}{{ else if .Site.Params.hero.image }}{{ .Site.Params.hero.image | absURL }}{{ else }}{{ "/fav.png" | absURL }}{{ end }}">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta name="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else if .Description }}{{ .Description }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}">
+<meta name="twitter:image" content="{{ if .Params.image }}{{ .Params.image | absURL }}{{ else if .Site.Params.hero.image }}{{ .Site.Params.hero.image | absURL }}{{ else }}{{ "/fav.png" | absURL }}{{ end }}">
+
+<!-- Google Analytics -->
 {{ template "_internal/google_analytics.html" . }}
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
+
+<!-- Structured Data (JSON-LD) -->
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.hero.title | default .Site.Title }}",
+  "jobTitle": "{{ .Site.Params.hero.subtitle }}",
+  "url": "{{ .Site.BaseURL }}",
+  "image": "{{ .Site.Params.hero.image | absURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "sameAs": [
+    {{- $links := slice -}}
+    {{- range .Site.Params.hero.socialLinks.fontAwesomeIcons -}}
+      {{- $links = $links | append .url -}}
+    {{- end -}}
+    {{- range .Site.Params.hero.socialLinks.customIcons -}}
+      {{- $links = $links | append .url -}}
+    {{- end -}}
+    {{- range $index, $link := $links -}}
+      {{- if $index -}},{{- end -}}
+      "{{- $link | safeJS -}}"
+    {{- end -}}
+  ]
+}
+</script>
+{{ else if and .IsPage (eq .Section "blogs") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title | safeJS }}",
+  "description": "{{ if .Description }}{{ .Description | safeJS }}{{ else }}{{ .Summary | truncate 160 | safeJS }}{{ end }}",
+  "datePublished": "{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" }}",
+  {{ if not .Lastmod.IsZero }}"dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}",{{ end }}
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Params.author | default .Site.Params.hero.title | default "Ankit Kumar" | safeJS }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.hero.title | default "Ankit Kumar" | safeJS }}"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "image": "{{ if .Params.image }}{{ .Params.image | absURL }}{{ else if .Site.Params.hero.image }}{{ .Site.Params.hero.image | absURL }}{{ else }}{{ "/fav.png" | absURL }}{{ end }}"
+}
+</script>
+{{ else }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ .Title | safeJS }}",
+  "description": "{{ if .Description }}{{ .Description | safeJS }}{{ else }}{{ .Summary | truncate 160 | safeJS }}{{ end }}",
+  "url": "{{ .Permalink }}"
+}
+</script>
+{{ end }}
 
 <!-- stylesheets -->
 {{- if (or (eq .Site.Params.UseBootstrapCDN true) (eq .Site.Params.UseBootstrapCDN "css")) -}}
