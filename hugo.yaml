@@ -1,5 +1,5 @@
 baseURL: "https://anky209e.netlify.app"
-languageCode: "en-us"
+locale: "en-us"
 title: "Anky209e"
 # theme: hugo-profile
 
@@ -94,24 +94,24 @@ params:
   # color preference
   # When using hex codes for colors, quotations must be used along with the # sign
   color:
-    # Flexoki Light
-    textColor: "#100f0f"
-    secondaryTextColor: "#6f6e69"
-    textLinkColor: "#4385be"
-    backgroundColor: "#fffcf0"
-    secondaryBackgroundColor: "#f2f0e5"
-    primaryColor: "#d14d41"
-    secondaryColor: "#f2f0e5"
+    # Orbit & Landing - Astro Space Theme (Standard)
+    textColor: "#F3F4F6"
+    secondaryTextColor: "#9CA3AF"
+    textLinkColor: "#00E5FF"
+    backgroundColor: "#080A16"
+    secondaryBackgroundColor: "#0D1127"
+    primaryColor: "#FF6B00"
+    secondaryColor: "#0D1127"
 
     darkmode:
-      # Dracula
-      textColor: "#f8f8f2"
-      secondaryTextColor: "#6272a4"
-      textLinkColor: "#8be9fd"
-      backgroundColor: "#282a36"
-      secondaryBackgroundColor: "#44475a"
-      primaryColor: "#bd93f9"
-      secondaryColor: "#44475a"
+      # Orbit & Landing - Deep Space (Dark Mode)
+      textColor: "#F3F4F6"
+      secondaryTextColor: "#9CA3AF"
+      textLinkColor: "#00E5FF"
+      backgroundColor: "#020205"
+      secondaryBackgroundColor: "#0A0D1A"
+      primaryColor: "#FF6B00"
+      secondaryColor: "#0A0D1A"
 
   # If you want to customize the menu, you can change it here
   navbar:
@@ -293,6 +293,23 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - title: Tensile Analysis Platform
+        date: "March 2026 – May 2026"
+        content: |
+          * Developed a high-performance material characterization dashboard (Streamlit, SciPy, Pandas) currently utilized at a University of Stuttgart research laboratory to automate raw tensile test analysis.
+          * Built custom physical solvers, including an optimized Young's modulus window-search algorithm using cumulative sum statistics and a 0.2% yield strength offset solver.
+          * Implemented fuzzy-token matching engines to map complex laboratory thickness spreadsheets with raw Instron test runs, integrating ANOVA, t-tests, and IQR outlier detection.
+        image: /images/tensile.jpg
+        featured:
+          name: Read Case Study
+          link: /blogs/tensile_analysis/
+        badges:
+          - "Python"
+          - "Streamlit"
+          - "SciPy"
+          - "Pandas"
+          - "Statistics"
+
       - title: Modelsmith
         content: Modelsmith, a Django web app integrating 10+ ML models, from linear regression to ResNets and GANs, with detailed documentation for easy user understanding.
         image: /images/projects/modelsmith.png
