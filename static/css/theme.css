@@ -1,7 +1,7 @@
 :root {
-    --border-radius: 12px;
+    --border-radius: 16px;
     --border-radius-sm: 8px;
-    --border-radius-lg: 20px;
+    --border-radius-lg: 24px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -11,8 +11,92 @@ html {
 }
 
 body {
-    background-color: var(--background-color) !important;
+    background-color: transparent !important;
     color: var(--text-color) !important;
+}
+
+#cosmic-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    pointer-events: none;
+    background-color: transparent !important;
+    overflow: hidden;
+}
+
+.cosmic-bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--bg-gradient-1, #080A16) 0%, var(--bg-gradient-2, #020205) 100%) !important;
+    z-index: -101;
+    opacity: 1;
+}
+
+/* Coordinates Grid Overlay */
+#cosmic-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    z-index: 3;
+}
+
+/* Star particles / cosmic dust */
+#cosmic-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 80px, rgba(255, 255, 255, 0.8), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 80px 240px, rgba(0, 229, 255, 0.8), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 340px 180px, rgba(255, 107, 0, 0.8), rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    opacity: 0.12;
+    z-index: 4;
+}
+
+/* Floating Nebula Gradients */
+.nebula-cyan {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, transparent 70%);
+    filter: blur(50px);
+    animation: orbit-drift 40s infinite alternate ease-in-out;
+    z-index: 2;
+}
+
+.nebula-orange {
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    filter: blur(50px);
+    animation: orbit-drift 50s infinite alternate-reverse ease-in-out;
+    z-index: 2;
+}
+
+@keyframes orbit-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-5%, 8%) scale(1.1); }
+    100% { transform: translate(3%, -4%) scale(0.95); }
 }
 
 /* Global Border Radius for a premium look */
@@ -46,12 +130,6 @@ body {
     padding: 0 !important;
 }
 
-/* Slightly softer radius for small elements like badges */
-.badge {
-    border-radius: var(--border-radius-sm) !important;
-    padding: 0.5em 0.8em;
-}
-
 /* Ensure all elements inherit theme colors unless overridden */
 * {
     background-color: transparent;
@@ -59,23 +137,109 @@ body {
 }
 
 /* Reset containers and cards to use theme colors */
-.container, .card, section, nav, footer, .navbar, .modal-content {
-    background-color: var(--background-color);
+.container, section, nav, footer, .navbar, .modal-content {
+    background-color: transparent;
     color: var(--text-color);
 }
 
+/* Glassmorphism Panel cards */
 .card, .viewer-enabled-image {
-    border: 1px solid rgba(0,0,0,0.08);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: rgba(13, 17, 39, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(12px) saturate(130%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
 }
 
 html.dark .card, html.dark .viewer-enabled-image {
-    border: 1px solid rgba(255,255,255,0.08);
+    background-color: rgba(10, 13, 26, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.04) !important;
 }
 
+/* Spring-like Hover effects with Orange/Cyan accents */
 .card:hover, .viewer-enabled-image:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(0, 229, 255, 0.3) !important;
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.12),
+                0 0 25px rgba(255, 107, 0, 0.03);
+}
+
+/* Liquid glass buttons */
+.btn {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+    color: var(--text-color) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.8rem !important;
+    padding: 0.7rem 1.4rem !important;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), 
+                0 8px 24px rgba(0, 0, 0, 0.25) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Liquid glass sheen sweep reflection */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: all 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    border-color: rgba(0, 229, 255, 0.35) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.25), 
+                0 12px 30px rgba(0, 229, 255, 0.15) !important;
+    transform: translateY(-3px);
+    color: #00E5FF !important;
+}
+
+/* Telemetry-style badges */
+.badge {
+    font-family: 'JetBrains Mono', monospace !important;
+    background-color: rgba(0, 229, 255, 0.08) !important;
+    color: #00E5FF !important;
+    border: 1px solid rgba(0, 229, 255, 0.2) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em;
+    font-size: 0.75rem !important;
+    border-radius: var(--border-radius-sm) !important;
+    padding: 0.5em 0.8em;
+}
+
+/* Tab navigation pills */
+.nav-pills .nav-link {
+    color: var(--text-secondary-color) !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    border: 1px solid transparent !important;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: rgba(255, 107, 0, 0.1) !important;
+    color: var(--primary-color) !important;
+    border: 1px solid rgba(255, 107, 0, 0.3) !important;
 }
 
 .bg-transparent {
@@ -158,3 +322,43 @@ body::-webkit-scrollbar {
     height: .1em;
     background-color: var(--background-color);
 }
+
+/* Scroll Reveal Animations */
+.scroll-reveal {
+    opacity: 0 !important;
+    transform: translateY(40px) !important;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: transform, opacity;
+}
+
+.scroll-reveal-left {
+    opacity: 0 !important;
+    transform: translateX(-40px) !important;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: transform, opacity;
+}
+
+.scroll-reveal-right {
+    opacity: 0 !important;
+    transform: translateX(40px) !important;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: transform, opacity;
+}
+
+/* Revealed state triggered by Intersection Observer */
+.scroll-reveal.revealed,
+.scroll-reveal-left.revealed,
+.scroll-reveal-right.revealed {
+    opacity: 1 !important;
+    transform: translate(0) !important;
+}
+
+/* Staggered delay helpers for dynamic lists */
+.reveal-delay-1 { transition-delay: 0.1s !important; }
+.reveal-delay-2 { transition-delay: 0.2s !important; }
+.reveal-delay-3 { transition-delay: 0.3s !important; }
+.reveal-delay-4 { transition-delay: 0.4s !important; }
+
