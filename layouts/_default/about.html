@@ -39,8 +39,8 @@
 
                                 {{ range .Params.socialLinks.customIcons }}
                                 <li class="list-inline-item text-center">
-                                    <a href="{{ .url }}" target="_blank" class="img-icon">
-                                        <img src="{{ .icon | relURL }}">
+                                    <a href="{{ .url }}" target="_blank" class="img-icon" aria-label="{{ .name | default "Social Link" }}">
+                                        <img src="{{ .icon | relURL }}" alt="{{ .name | default "Social Link" }}">
                                     </a>
                                 </li>
                                 {{ end }}

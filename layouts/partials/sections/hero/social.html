@@ -14,9 +14,9 @@
     <span class="px-1">
         <a href="{{ .url }}"
             {{ if not (hasPrefix .url "#") }} target="_blank" {{ end }}
-            class="btn social-icon" aria-label="{{ .url }}"
+            class="btn social-icon" aria-label="{{ .name | default .url }}"
         >
-            <img src="{{ .icon | relURL }}" alt="{{ .url }}">
+            <img src="{{ .icon | relURL }}" alt="{{ .name | default .url }}">
         </a>
     </span>
     {{ end }}

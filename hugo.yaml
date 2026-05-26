@@ -158,6 +158,7 @@ params:
           url: https://www.linkedin.com/in/anky209e/
       customIcons:
         - icon: /fav.png
+          name: Modelsmith
           url: "https://modelsmith.up.railway.app"
 
   # About
