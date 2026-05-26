@@ -93,6 +93,106 @@
 <script src="{{ (printf "%sjs/contact.js" (.Site.Params.staticPath | default "/")) | relURL }}"></script>
 {{ end }}
 
+<!-- Scroll Reveal, Parallax and Scroll-Triggered Gradient Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // 1. Color stops definitions for space descent theme (Top -> Middle -> Bottom)
+        const hexToRgb = (hex) => {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+        };
+
+        const interpolateColor = (color1, color2, factor) => {
+            const r = Math.round(color1.r + (color2.r - color1.r) * factor);
+            const g = Math.round(color1.g + (color2.g - color1.g) * factor);
+            const b = Math.round(color1.b + (color2.b - color1.b) * factor);
+            return `rgb(${r}, ${g}, ${b})`;
+        };
+
+        const stops = [
+            { pos: 0.0, c1: hexToRgb("#080A16"), c2: hexToRgb("#020205") }, // Stop 0%: Space Navy / Deep Black
+            { pos: 0.5, c1: hexToRgb("#0b0f2b"), c2: hexToRgb("#1b0d2d") }, // Stop 50%: Indigo Navy / Orbit Violet
+            { pos: 1.0, c1: hexToRgb("#260f08"), c2: hexToRgb("#0c0502") }  // Stop 100%: Landing Rust / Warm Horizon
+        ];
+
+        const getGradientColors = (pct) => {
+            pct = Math.max(0, Math.min(1, pct));
+            let lower = stops[0];
+            let upper = stops[stops.length - 1];
+            
+            for (let i = 0; i < stops.length - 1; i++) {
+                if (pct >= stops[i].pos && pct <= stops[i+1].pos) {
+                    lower = stops[i];
+                    upper = stops[i+1];
+                    break;
+                }
+            }
+
+            const range = upper.pos - lower.pos;
+            const factor = range > 0 ? (pct - lower.pos) / range : 0;
+
+            const color1 = interpolateColor(lower.c1, upper.c1, factor);
+            const color2 = interpolateColor(lower.c2, upper.c2, factor);
+            return { color1, color2 };
+        };
+
+        // Update background gradient colors based on scroll progress
+        const bgGradient = document.querySelector(".cosmic-bg-gradient");
+        
+        function updateBackgroundGradient(scrollY) {
+            if (!bgGradient) return;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = maxScroll > 0 ? scrollY / maxScroll : 0;
+            const { color1, color2 } = getGradientColors(pct);
+            bgGradient.style.setProperty("--bg-gradient-1", color1);
+            bgGradient.style.setProperty("--bg-gradient-2", color2);
+        }
+
+        // Initialize background gradient on load
+        updateBackgroundGradient(window.pageYOffset);
+
+        // 2. Intersection Observer for Scroll Reveal
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.08
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("revealed");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const targets = document.querySelectorAll(".scroll-reveal, .scroll-reveal-left, .scroll-reveal-right");
+        targets.forEach(target => revealObserver.observe(target));
+
+        // 3. Scroll Update for Gradient Transitions
+        let lastScrollY = window.pageYOffset;
+        let ticking = false;
+
+        function onScrollUpdate() {
+            updateBackgroundGradient(lastScrollY);
+            ticking = false;
+        }
+
+        window.addEventListener("scroll", () => {
+            lastScrollY = window.pageYOffset;
+            if (!ticking) {
+                window.requestAnimationFrame(onScrollUpdate);
+                ticking = true;
+            }
+        }, { passive: true });
+    });
+</script>
+
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}
