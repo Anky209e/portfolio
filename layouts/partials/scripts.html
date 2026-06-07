@@ -39,6 +39,7 @@
             document.documentElement.classList.add('dark');
             localStorage.setItem("pref-theme", 'dark');
         }
+        window.dispatchEvent(new Event('scroll'));
     })
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -113,21 +114,33 @@
             return `rgb(${r}, ${g}, ${b})`;
         };
 
-        const stops = [
-            { pos: 0.0, c1: hexToRgb("#080A16"), c2: hexToRgb("#020205") }, // Stop 0%: Space Navy / Deep Black
-            { pos: 0.5, c1: hexToRgb("#0b0f2b"), c2: hexToRgb("#1b0d2d") }, // Stop 50%: Indigo Navy / Orbit Violet
-            { pos: 1.0, c1: hexToRgb("#260f08"), c2: hexToRgb("#0c0502") }  // Stop 100%: Landing Rust / Warm Horizon
-        ];
+        const getStops = () => {
+            const isDark = document.documentElement.classList.contains("dark");
+            if (isDark) {
+                return [
+                    { pos: 0.0, c1: hexToRgb("#282A36"), c2: hexToRgb("#1E1F29") }, // Dracula Backgrounds
+                    { pos: 0.5, c1: hexToRgb("#211E36"), c2: hexToRgb("#4B3968") }, // Dracula Purple Gradient
+                    { pos: 1.0, c1: hexToRgb("#3E1C33"), c2: hexToRgb("#282A36") }  // Dracula Pink / Ending
+                ];
+            } else {
+                return [
+                    { pos: 0.0, c1: hexToRgb("#080A16"), c2: hexToRgb("#020205") }, // Astro Space Default
+                    { pos: 0.5, c1: hexToRgb("#0b0f2b"), c2: hexToRgb("#1b0d2d") }, // Astro Space Violet
+                    { pos: 1.0, c1: hexToRgb("#260f08"), c2: hexToRgb("#0c0502") }  // Astro Space Rust
+                ];
+            }
+        };
 
         const getGradientColors = (pct) => {
             pct = Math.max(0, Math.min(1, pct));
-            let lower = stops[0];
-            let upper = stops[stops.length - 1];
+            const currentStops = getStops();
+            let lower = currentStops[0];
+            let upper = currentStops[currentStops.length - 1];
             
-            for (let i = 0; i < stops.length - 1; i++) {
-                if (pct >= stops[i].pos && pct <= stops[i+1].pos) {
-                    lower = stops[i];
-                    upper = stops[i+1];
+            for (let i = 0; i < currentStops.length - 1; i++) {
+                if (pct >= currentStops[i].pos && pct <= currentStops[i+1].pos) {
+                    lower = currentStops[i];
+                    upper = currentStops[i+1];
                     break;
                 }
             }

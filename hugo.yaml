@@ -104,14 +104,14 @@ params:
     secondaryColor: "#0D1127"
 
     darkmode:
-      # Orbit & Landing - Deep Space (Dark Mode)
-      textColor: "#F3F4F6"
-      secondaryTextColor: "#9CA3AF"
-      textLinkColor: "#00E5FF"
-      backgroundColor: "#020205"
-      secondaryBackgroundColor: "#0A0D1A"
-      primaryColor: "#FF6B00"
-      secondaryColor: "#0A0D1A"
+      # Dracula Theme Palette (Dark Mode)
+      textColor: "#F8F8F2"
+      secondaryTextColor: "#6272A4"
+      textLinkColor: "#8BE9FD"
+      backgroundColor: "#282A36"
+      secondaryBackgroundColor: "#44475A"
+      primaryColor: "#BD93F9"
+      secondaryColor: "#44475A"
 
   # If you want to customize the menu, you can change it here
   navbar:
