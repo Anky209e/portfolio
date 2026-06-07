@@ -97,72 +97,25 @@
 <!-- Scroll Reveal, Parallax and Scroll-Triggered Gradient Script -->
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        // 1. Color stops definitions for space descent theme (Top -> Middle -> Bottom)
-        const hexToRgb = (hex) => {
-            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-            return result ? {
-                r: parseInt(result[1], 16),
-                g: parseInt(result[2], 16),
-                b: parseInt(result[3], 16)
-            } : null;
-        };
-
-        const interpolateColor = (color1, color2, factor) => {
-            const r = Math.round(color1.r + (color2.r - color1.r) * factor);
-            const g = Math.round(color1.g + (color2.g - color1.g) * factor);
-            const b = Math.round(color1.b + (color2.b - color1.b) * factor);
-            return `rgb(${r}, ${g}, ${b})`;
-        };
-
-        const getStops = () => {
-            const isDark = document.documentElement.classList.contains("dark");
-            if (isDark) {
-                return [
-                    { pos: 0.0, c1: hexToRgb("#282A36"), c2: hexToRgb("#1E1F29") }, // Dracula Backgrounds
-                    { pos: 0.5, c1: hexToRgb("#211E36"), c2: hexToRgb("#4B3968") }, // Dracula Purple Gradient
-                    { pos: 1.0, c1: hexToRgb("#3E1C33"), c2: hexToRgb("#282A36") }  // Dracula Pink / Ending
-                ];
-            } else {
-                return [
-                    { pos: 0.0, c1: hexToRgb("#080A16"), c2: hexToRgb("#020205") }, // Astro Space Default
-                    { pos: 0.5, c1: hexToRgb("#0b0f2b"), c2: hexToRgb("#1b0d2d") }, // Astro Space Violet
-                    { pos: 1.0, c1: hexToRgb("#260f08"), c2: hexToRgb("#0c0502") }  // Astro Space Rust
-                ];
-            }
-        };
-
-        const getGradientColors = (pct) => {
-            pct = Math.max(0, Math.min(1, pct));
-            const currentStops = getStops();
-            let lower = currentStops[0];
-            let upper = currentStops[currentStops.length - 1];
-            
-            for (let i = 0; i < currentStops.length - 1; i++) {
-                if (pct >= currentStops[i].pos && pct <= currentStops[i+1].pos) {
-                    lower = currentStops[i];
-                    upper = currentStops[i+1];
-                    break;
-                }
-            }
-
-            const range = upper.pos - lower.pos;
-            const factor = range > 0 ? (pct - lower.pos) / range : 0;
-
-            const color1 = interpolateColor(lower.c1, upper.c1, factor);
-            const color2 = interpolateColor(lower.c2, upper.c2, factor);
-            return { color1, color2 };
-        };
-
-        // Update background gradient colors based on scroll progress
-        const bgGradient = document.querySelector(".cosmic-bg-gradient");
+        // 1. Cache background layer elements for high-performance scroll opacity transitions
+        const bgMid = document.querySelector(".cosmic-bg-gradient .bg-mid");
+        const bgBottom = document.querySelector(".cosmic-bg-gradient .bg-bottom");
         
         function updateBackgroundGradient(scrollY) {
-            if (!bgGradient) return;
+            if (!bgMid || !bgBottom) return;
             const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
             const pct = maxScroll > 0 ? scrollY / maxScroll : 0;
-            const { color1, color2 } = getGradientColors(pct);
-            bgGradient.style.setProperty("--bg-gradient-1", color1);
-            bgGradient.style.setProperty("--bg-gradient-2", color2);
+            
+            // Staggered GPU-accelerated opacity transition:
+            // Mid layer fades in from pct=0 to pct=0.5
+            // Bottom layer fades in from pct=0.5 to pct=1.0
+            if (pct <= 0.5) {
+                bgMid.style.opacity = pct * 2;
+                bgBottom.style.opacity = 0;
+            } else {
+                bgMid.style.opacity = 1;
+                bgBottom.style.opacity = (pct - 0.5) * 2;
+            }
         }
 
         // Initialize background gradient on load

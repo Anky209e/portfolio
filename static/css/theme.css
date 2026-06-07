@@ -9,6 +9,17 @@
     --accent-color: #00E5FF;
     --accent-color-rgb: 0, 229, 255;
     --glow-color-rgb: 255, 107, 0;
+
+    --card-bg: rgba(13, 17, 39, 0.45);
+    --card-border: rgba(255, 255, 255, 0.05);
+
+    /* Gradient Layers - Default Theme */
+    --gradient-top-1: #080A16;
+    --gradient-top-2: #020205;
+    --gradient-mid-1: #0b0f2b;
+    --gradient-mid-2: #1b0d2d;
+    --gradient-bottom-1: #260f08;
+    --gradient-bottom-2: #0c0502;
 }
 
 html {
@@ -38,9 +49,32 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--bg-gradient-1, #080A16) 0%, var(--bg-gradient-2, #020205) 100%) !important;
     z-index: -101;
-    opacity: 1;
+}
+
+.cosmic-bg-gradient .bg-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    will-change: opacity;
+}
+
+.cosmic-bg-gradient .bg-top {
+    background: linear-gradient(135deg, var(--gradient-top-1, #080A16) 0%, var(--gradient-top-2, #020205) 100%) !important;
+    z-index: 1;
+}
+
+.cosmic-bg-gradient .bg-mid {
+    background: linear-gradient(135deg, var(--gradient-mid-1, #0b0f2b) 0%, var(--gradient-mid-2, #1b0d2d) 100%) !important;
+    z-index: 2;
+    opacity: 0;
+}
+
+.cosmic-bg-gradient .bg-bottom {
+    background: linear-gradient(135deg, var(--gradient-bottom-1, #260f08) 0%, var(--gradient-bottom-2, #0c0502) 100%) !important;
+    z-index: 3;
+    opacity: 0;
 }
 
 /* Coordinates Grid Overlay */
@@ -80,8 +114,7 @@ body {
     right: -10%;
     width: 80%;
     height: 80%;
-    background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.12) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.1) 0%, rgba(var(--accent-color-rgb), 0.03) 50%, transparent 70%);
     animation: orbit-drift 40s infinite alternate ease-in-out;
     z-index: 2;
 }
@@ -92,8 +125,7 @@ body {
     left: -10%;
     width: 70%;
     height: 70%;
-    background: radial-gradient(circle, rgba(var(--glow-color-rgb), 0.08) 0%, transparent 70%);
-    filter: blur(50px);
+    background: radial-gradient(circle, rgba(var(--glow-color-rgb), 0.07) 0%, rgba(var(--glow-color-rgb), 0.02) 50%, transparent 70%);
     animation: orbit-drift 50s infinite alternate-reverse ease-in-out;
     z-index: 2;
 }
@@ -149,8 +181,8 @@ body {
 
 /* Glassmorphism Panel cards */
 .card, .viewer-enabled-image {
-    background-color: rgba(13, 17, 39, 0.45) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
     backdrop-filter: blur(12px) saturate(130%);
     -webkit-backdrop-filter: blur(12px) saturate(130%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
@@ -159,10 +191,6 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
 }
 
-html.dark .card, html.dark .viewer-enabled-image {
-    background-color: rgba(10, 13, 26, 0.45) !important;
-    border: 1px solid rgba(255, 255, 255, 0.04) !important;
-}
 
 /* Spring-like Hover effects with Orange/Cyan accents */
 .card:hover, .viewer-enabled-image:hover {
@@ -269,6 +297,17 @@ html.dark {
     --accent-color: #8BE9FD; /* Dracula Cyan */
     --accent-color-rgb: 139, 233, 253;
     --glow-color-rgb: 255, 121, 198; /* Dracula Pink */
+
+    --card-bg: rgba(68, 71, 90, 0.35); /* Transparent Dracula Selection */
+    --card-border: rgba(189, 147, 249, 0.12); /* Transparent Dracula Purple */
+
+    /* Gradient Layers - Dracula Theme */
+    --gradient-top-1: #282A36;
+    --gradient-top-2: #1E1F29;
+    --gradient-mid-1: #211E36;
+    --gradient-mid-2: #4B3968;
+    --gradient-bottom-1: #3E1C33;
+    --gradient-bottom-2: #282A36;
 }
 
 html.dark #footer-socialNetworks-github-svg-path{
@@ -339,7 +378,6 @@ body::-webkit-scrollbar {
     transform: translateY(40px) !important;
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    will-change: transform, opacity;
 }
 
 .scroll-reveal-left {
@@ -347,7 +385,6 @@ body::-webkit-scrollbar {
     transform: translateX(-40px) !important;
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    will-change: transform, opacity;
 }
 
 .scroll-reveal-right {
@@ -355,7 +392,6 @@ body::-webkit-scrollbar {
     transform: translateX(40px) !important;
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    will-change: transform, opacity;
 }
 
 /* Revealed state triggered by Intersection Observer */
