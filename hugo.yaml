@@ -94,17 +94,19 @@ params:
   # color preference
   # When using hex codes for colors, quotations must be used along with the # sign
   color:
-    # Orbit & Landing - Astro Space Theme (Standard)
-    textColor: "#F3F4F6"
-    secondaryTextColor: "#9CA3AF"
-    textLinkColor: "#00E5FF"
-    backgroundColor: "#080A16"
-    secondaryBackgroundColor: "#0D1127"
-    primaryColor: "#FF6B00"
-    secondaryColor: "#0D1127"
+    # Gruvbox Light Theme
+    # bg0 / main background: #FBF1C7  fg0 / main text: #3C3836
+    textColor: "#3C3836"
+    secondaryTextColor: "#7C6F64"
+    textLinkColor: "#458588"
+    backgroundColor: "#FBF1C7"
+    secondaryBackgroundColor: "#EBDBB2"
+    primaryColor: "#D65D0E"
+    secondaryColor: "#EBDBB2"
 
     darkmode:
-      # Dracula Theme Palette (Dark Mode)
+      # Dracula Theme Palette
+      # bg / main background: #282A36  fg / main text: #F8F8F2
       textColor: "#F8F8F2"
       secondaryTextColor: "#6272A4"
       textLinkColor: "#8BE9FD"

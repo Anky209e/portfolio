@@ -108,7 +108,7 @@ header .navbar.animate {
 }
 
 #hero .image img {
-    box-shadow:0px 8px 56px rgba(15, 80, 100, 0.16);
+    box-shadow:0px 8px 56px rgba(var(--shadow-color-rgb), 0.1);
     padding: 0;
     border: 3px solid var(--secondary-color);
     border-radius: 1rem;
@@ -124,7 +124,7 @@ header .navbar.animate {
 }
 
 #hero .image.animate img:hover {
-    box-shadow: 0 0 11px rgb(15 80 100 / 20%);
+    box-shadow: 0 0 11px rgba(var(--shadow-color-rgb), 0.12);
     filter: contrast(1.2);
     cursor: pointer;
 }
@@ -200,14 +200,14 @@ header .navbar.animate {
 }
 
 #about .image img {
-    box-shadow: 0px 8px 56px rgba(15, 80, 100, 0.16);
+    box-shadow: 0px 8px 56px rgba(var(--shadow-color-rgb), 0.1);
     transition: box-shadow 0.3s;
     padding: 0;
     border: 0;
 }
 
 #about .image img:hover {
-    box-shadow: 0 0 11px rgb(15 80 100 / 20%);
+    box-shadow: 0 0 11px rgba(var(--shadow-color-rgb), 0.12);
 }
 
 #about ul {
@@ -291,7 +291,7 @@ header .navbar.animate {
 #experience .experience-container {
     background-color: var(--secondary-color) !important;
     border-radius: .75rem;
-    box-shadow: 0px 8px 56px rgb(15 80 100 / 16%);
+    box-shadow: 0px 8px 56px rgba(var(--shadow-color-rgb), 0.1);
 }
 
 #experience .nav-item .nav-link {
@@ -477,7 +477,7 @@ header .navbar.animate {
     cursor: context-menu;
     background-color: var(--secondary-color) !important;
     border-radius: 1rem;
-    box-shadow: 0 0 36px rgba(0,0,0,0.1);
+    box-shadow: 0 0 36px rgba(var(--shadow-color-rgb), 0.1);
     /* transform: translate3d(0, 0, 0); */
     transition: box-shadow .2s linear,opacity .2s linear;
     border: 2px solid transparent;
@@ -538,7 +538,7 @@ header .navbar.animate {
     color: var(--text-color);
     border-radius: .7rem;
     border: 1px solid var(--text-secondary-color);
-    box-shadow: 0px 8px 56px rgb(15 80 100 / 5%);
+    box-shadow: 0px 8px 56px rgba(var(--shadow-color-rgb), 0.04);
 }
 
 #contact-form-status {
@@ -557,15 +557,15 @@ header .navbar.animate {
 #contact-form-status button {
     border-radius: 50%;
     border: none;
-    background-color: white;
+    background-color: var(--secondary-color);
     padding: 0.5rem;
     margin-left: 0.5rem;
-    box-shadow: 0px 8px 56px rgb(15 80 100 / 5%);
+    box-shadow: 0px 8px 56px rgba(var(--shadow-color-rgb), 0.04);
     font-size: .6rem !important;
 }
 
 #contact-form-status .alert {
     border-radius: 0.5rem;
-    box-shadow: 0px 8px 56px rgb(15 80 100 / 5%);
+    box-shadow: 0px 8px 56px rgba(var(--shadow-color-rgb), 0.04);
     padding: .5rem 1rem;
 }
