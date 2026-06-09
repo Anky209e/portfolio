@@ -140,8 +140,8 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Ankit Kumar"
-    subtitle: "Backend Developer & ML Engineer"
-    content: "A passionate Software Engineer with expertise in backend development, AI, and ML, specializing in building scalable solutions and innovative models."
+    subtitle: "AI/ML Engineer & Backend Developer"
+    content: "Highly skilled AI/ML Engineer and Backend Developer with hands-on experience in building and deploying production-grade Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) systems. Proven ability to translate complex data science problems into scalable software solutions."
     image: /images/me.png
     bottomImage:
       enable: true
@@ -170,45 +170,56 @@ params:
     image: "/images/hero.svg"
     roundImage: false
     content: |-
-      Hi, I'm Ankit Kumar, a Software Engineer specializing in backend development, machine learning, and AI. 
-      I’ve built a multilingual RAG system using LangChain and FAISS and developed a Django web app integrating 10+ ML models. During my internship at ISRO, I optimized Lunar landing algorithms using Deep Reinforcement Learning. I’m experienced in cloud technologies, 
-      API design, and DevOps, always eager to solve complex problems and build innovative solutions.
+      Hi, I'm Ankit Kumar, an AI/ML Engineer and Backend Developer passionate about bridging the gap between complex data science research and production-grade software engineering. 
+
+      Over my career and freelance consulting, I have designed and deployed multiple conversational AI systems and LLM/RAG architectures, including building and fine-tuning transformer models from scratch. During my time at the Indian Space Research Organisation (ISRO), I designed Reinforcement Learning simulators for Lunar landing trajectories and engineered high-throughput telemetry pipelines. 
+
+      Whether it's optimizing physical solvers, training 10+ distinct machine learning architectures, or scaling backend services for thousands of active users, I love building performant, scalable, and intelligent systems.
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
       items:
-        - "Machine Learning"
+        - "Python & SQL"
+        - "PyTorch & TensorFlow"
+        - "Generative AI & RAG"
         - "Reinforcement Learning"
-        - "Django"
-        - "LangChain"
-        - "PyTorch"
-        - "Docker"
+        - "Django & FastAPI"
+        - "Docker & CI/CD"
 
   # Experience
   experience:
     enable: true
     # title: "Custom Name"
     items:
+      - job: "Freelance AI/ML Engineer | Consultant"
+        company: "Freelance Consulting"
+        companyUrl: "#"
+        date: "July 2024 – Present"
+        info:
+          enable: true
+          content: "Freelance consulting in AI/ML architectures and LLM/RAG systems."
+        content: |
+          * Designed and deployed 4+ production-grade Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) systems for domain-specific applications, achieving a 20% improvement in search/retrieval performance.
+          * Built and fine-tuned transformer-based Large Language Models (LLMs), including training a 124M parameter model from scratch.
+          * Designed and implemented end-to-end conversational AI solutions that scaled to handle 5,000+ daily user interactions.
+          * Reduced harmful output instances by 95% through the implementation of AI safety guardrails and advanced prompt engineering techniques.
+
       - job: "Project Intern"
-        company: "Indian Space research organisation(ISRO)"
+        company: "ISRO - Indian Space Research Organisation"
         companyUrl: "https://www.isro.gov.in"
-        date: "May 2024 - July 2024"
+        date: "May 2024 – June 2024"
         featuredLink:
           enable: true
           name: "View the project"
           url: "https://docs.google.com/document/d/1uhJ3qluwSfv4Fjt-8RPURmRJHRbLNDZNzZUYC_tpjN8/edit?usp=sharing"
         info:
           enable: true
-          content: I worked as a Project Intern at ISRO.
-        content: |-
-          Enhanced Lunar landing algorithms at ISRO using Deep Reinforcement Learning and custom Q-learning models.
-
-          - Improved Lunar landing algorithm using Reinforcement Learning and Custom State of the Art algorithms.
-
-          - Worked on Range operations involving software development and machine learning tasks.
-
-          - Developed back-end solutions for Lunar landing using custom Deep Q-Learning algorithm.
-
+          content: "Optimized autonomous systems using Reinforcement Learning."
+        content: |
+          * Optimized autonomous Lunar landing simulations using Reinforcement Learning agents, reducing trajectory error margin by 15% over baseline heuristics.
+          * Engineered Range Operations data pipelines to process 10,000+ data points per second, enabling real-time fault forecasting with 90% accuracy.
+          * Designed a low-level hardware processing layer in Python/C to increase telemetry throughput by 2X and condition GBs of multi-sensor telemetry for RL training loops.
+          * Collaborated closely with a team of distinguished Scientists to prototype mission-critical software frameworks.
 
       - job: "Backend Developer Intern"
         company: "Ecowiser"
@@ -219,15 +230,13 @@ params:
           url: "https://wiser.eco"
         info:
           enable: true
-          content: I worked as a Backend Developer Intern at Ecowiser.
-        content: |-
-          I developed and maintained backend services at Ecowiser using Django, integrated NLP for search, and automated deployments with CI/CD and AWS Lambda.
+          content: "Backend software engineering and deployment pipelines."
+        content: |
+          * Designed and scaled production backend services for a core Chrome Extension and Web ecosystem supporting 10,000+ active users utilizing Django Rest Framework.
+          * Accelerated internal search query speeds by 30% through the integration of custom NLP tokenization into PostgreSQL Full-Text Search.
+          * Built an asynchronous, automated customer engagement pipeline utilizing Redis and Celery, processing over 5,000 scheduled feedback dispatches daily.
 
-          - Improved product search functionality by Integrating NLP in postgreSQL search.
-          - Implemented Automated Mail letters for Customer review and feedback.
-          - Managed infrastructure as code using tools like Nginx, Docker, Kubernetes etc. to ensure scalability and reliability.
-
-      - job: "Machine Learning Engineer Intern"
+      - job: "Machine Learning Intern"
         company: "Velozity Global Solutions"
         companyUrl: "https://www.linkedin.com/company/velozity-global-solutions/posts/?feedView=all"
         date: "June 2022 - Oct 2022"
@@ -237,12 +246,9 @@ params:
           enable: true
           name: "Projects"
           url: "https://github.com/Anky209e/Machine-Learning-Projects"
-        content: |-
-          I implemented and optimized machine learning models at Velozity using PyTorch and TensorFlow, focusing on NLP, image classification, and time series forecasting.
-
-          - Implemented machine learning algorithms and models using PyTorch, TensorFlow, and other frameworks to analyze and solve real-world problems.
-
-          - Contributed to the development and optimization of neural network architectures for tasks such as image classification, natural language processing, and time series forecasting
+        content: |
+          * Developed and cross-validated predictive deep learning frameworks using PyTorch and TensorFlow across 15GB+ unstructured datasets.
+          * Designed and benchmarked LSTM-based architectures, improving accuracy by 14% in identifying long-term temporal dependencies within sequential data logs.
 
   # Education
   education:
@@ -250,16 +256,15 @@ params:
     # title: "Custom Name"
     index: false
     items:
-      - title: "Bachelor of Technology(Computer Science and Engineering-Data Science(ML and AI))"
+      - title: "Bachelor of Technology in Computer Science and Data Science"
         school:
-          name: "Lovely Professional University,Jalandhar"
+          name: "Lovely Professional University"
           url: "https://www.lpu.in"
-        date: "2020 - 2024"
+          location: "Punjab, India"
+        date: "Oct. 2020 – May 2024"
         GPA: "7.38 out of 10"
-        content: |-
-          I Developed expertise in machine learning, deep learning, and AI through hands-on projects and coursework. 
-            - Built and deployed ML models using Python, TensorFlow, and PyTorch for various real-world applications.
-            - Gained practical knowledge of data analysis, NLP, and reinforcement learning through academic and personal projects.
+        content: |
+          * Relevant Coursework: Data Structures, Algorithms, Databases, Computer Systems, Machine Learning, Artificial Intelligence
         featuredLink:
           enable: true
           name: "My academic record"
@@ -281,13 +286,19 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - title: UpGrad Hackathon Winner
-        content: Created Django app for Fake news detection using LSTM and retraining pipeline and got first prize.
-        url: https://github.com/Anky209e/upgrad_hackathon_uwu
-        image: /images/upgrad.jpg
-      - title: Hacktoberfest 2020 Contributor
-        content: Contributed to biggest open source festival and completed all goals. 
-        image: /images/hacktoberfest.jpg
+      - title: "UpGrad Hackathon Winner"
+        content: "Created a Django app for Fake News Detection using LSTM with a retraining pipeline and won first prize."
+        url: "https://github.com/Anky209e/upgrad_hackathon_uwu"
+        image: "/images/upgrad.jpg"
+      - title: "Reinforcement Learning (NPTEL)"
+        content: "Earned NPTEL Certification in Reinforcement Learning from IIT Madras (Jan - Apr 2022)."
+        url: "https://nptel.ac.in"
+      - title: "Python for Data Science (Elite)"
+        content: "Earned Elite NPTEL Certification in Python for Data Science from IIT Madras (Jan - Feb 2022)."
+        url: "https://nptel.ac.in"
+      - title: "Hacktoberfest 2020 Contributor"
+        content: "Contributed to the open-source festival and successfully completed all goals."
+        image: "/images/hacktoberfest.jpg"
 
 
   # projects
@@ -298,9 +309,9 @@ params:
       - title: Tensile Analysis Platform
         date: "March 2026 – May 2026"
         content: |
-          * Developed a high-performance material characterization dashboard (Streamlit, SciPy, Pandas) currently utilized at a University of Stuttgart research laboratory to automate raw tensile test analysis.
-          * Built custom physical solvers, including an optimized Young's modulus window-search algorithm using cumulative sum statistics and a 0.2% yield strength offset solver.
-          * Implemented fuzzy-token matching engines to map complex laboratory thickness spreadsheets with raw Instron test runs, integrating ANOVA, t-tests, and IQR outlier detection.
+          * Designed and deployed a high-performance material characterization dashboard used by a University of Stuttgart research laboratory, automating 90% of complex stress-strain analysis.
+          * Built custom mathematical physics solvers, including an optimized Young’s modulus window-search engine using cumulative sum statistics and a strict 0.2% yield strength offset script.
+          * Implemented fuzzy-token matching to integrate 100+ unstructured laboratory spreadsheets with raw data, embedding automated statistical analysis (ANOVA, t-tests, IQR outlier detection).
         image: /images/tensile.jpg
         featured:
           name: Read Case Study
@@ -313,7 +324,10 @@ params:
           - "Statistics"
 
       - title: Modelsmith
-        content: Modelsmith, a Django web app integrating 10+ ML models, from linear regression to ResNets and GANs, with detailed documentation for easy user understanding.
+        date: "June 2022 – July 2022"
+        content: |
+          * Developed a unified model-evaluation web application in Django hosting 10+ distinct machine learning architectures, including custom ResNets and Generative Adversarial Networks (GANs).
+          * Authored thorough technical specifications and documentation detailing the underlying linear algebra, backpropagation mechanics, and production deployment parameters.
         image: /images/projects/modelsmith.png
         featured:
           name: Visit Site
@@ -332,7 +346,10 @@ params:
 
 
       - title: Multilingual RAG System
-        content: Built a multilingual RAG system for PDF documents and books using LangChain and FAISS, enabling fast, context-aware responses across languages.
+        date: "July 2024"
+        content: |
+          * Built a multilingual RAG system for PDF documents and books using LangChain and FAISS, enabling fast, context-aware responses across languages.
+          * Optimized vector store retrieval and chunking strategies to ensure context accuracy and latency reduction.
         image: /images/projects/rag.png
         featured:
           name: Source Code
@@ -348,7 +365,10 @@ params:
             url: https://github.com/Anky209e/pdf_rag_system
 
       - title: AquaQuest
-        content: Aqua's Quest is a fun educational platformer for kids (5–6 yrs) that teaches the water cycle and groundwater conservation through four interactive levels. Each stage includes simple tooltips, mini-quizzes, and concept scenes to reinforce learning through play.
+        date: "Nov 2023"
+        content: |
+          * Developed an educational platformer in Godot for kids (5–6 yrs) teaching the water cycle and groundwater conservation through four interactive levels.
+          * Integrated concept scenes, mini-quizzes, and interactive tooltips to reinforce learning through play.
         image: /images/projects/aquaquest.png
         featured:
           name: Download
