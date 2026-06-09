@@ -161,7 +161,7 @@ params:
       customIcons:
         - icon: /fav.png
           name: Modelsmith
-          url: "https://modelsmith.up.railway.app"
+          url: "https://modelsmith.app/"
 
   # About
   about:
@@ -331,7 +331,7 @@ params:
         image: /images/projects/modelsmith.png
         featured:
           name: Visit Site
-          link: https://modelsmith.app
+          link: https://modelsmith.app/
         badges:
           - "Django"
           - "Deep Learning"
