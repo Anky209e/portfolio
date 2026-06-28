@@ -22,8 +22,27 @@
     <div class="bg-layer bg-bottom"></div>
   </div>
   <div id="cosmic-backdrop">
-    <div class="nebula-cyan"></div>
-    <div class="nebula-orange"></div>
+    <div class="sun-glow"></div>
+    <div class="sun-rays"></div>
+    <div class="sun-rays-2"></div>
+    <div class="abstract-lines">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <!-- Spiral curve 1 - large sweeping arc from top-left wrapping toward sun -->
+        <path class="abstract-line abstract-line-glow" d="M 0,200 C 200,180 400,100 600,200 C 800,300 950,150 1100,100 C 1250,50 1400,80 1440,40" />
+        <!-- Spiral curve 2 - complimentary arc from bottom -->
+        <path class="abstract-line abstract-line-accent" d="M 0,700 C 250,750 500,600 700,650 C 900,700 1050,550 1200,500 C 1350,450 1400,480 1440,420" />
+        <!-- Spiral arm near sun - tight curl -->
+        <path class="abstract-line abstract-line-glow" d="M 900,250 C 950,200 1020,180 1080,220 C 1140,260 1120,330 1060,350 C 1000,370 940,320 960,280" />
+        <!-- Flowing line - thin, subtle -->
+        <path class="abstract-line-thin abstract-line-subtle" d="M 0,400 C 300,350 450,500 700,450 C 950,400 1150,550 1350,480 C 1400,460 1420,500 1440,490" />
+        <!-- Sweep line from bottom-left -->
+        <path class="abstract-line-thin abstract-line-accent" d="M 0,600 C 200,550 350,400 550,500 C 750,600 900,450 1100,400 C 1250,350 1350,380 1440,350" />
+        <!-- Gentle wave across the middle -->
+        <path class="abstract-line-thin abstract-line-glow" d="M 100,350 C 350,300 500,420 750,380 C 1000,340 1200,450 1400,400" />
+        <!-- Short accent curl bottom-right -->
+        <path class="abstract-line abstract-line-accent" d="M 1200,650 C 1280,620 1350,630 1380,680 C 1410,730 1370,780 1320,760 C 1270,740 1280,680 1320,670" />
+      </svg>
+    </div>
   </div>
   <!-- javascripts -->
   <!-- <script src="/js/jquery-3.6.0.min.js"></script> -->
