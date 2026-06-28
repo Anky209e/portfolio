@@ -267,122 +267,145 @@ header .navbar.animate {
     margin-bottom: 0.5rem;
 }
 
-#experience .experience-container {
+.experience-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.experience-item {
     background: var(--card-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
-    border-radius: var(--border-radius-lg);
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(var(--shadow-color-rgb), 0.08);
-}
-
-#experience .nav-pills {
-    gap: 0.5rem;
-    margin-bottom: 1.5rem !important;
-}
-
-#experience .nav-item {
-    background: transparent;
-}
-
-#experience .nav-link {
-    background: transparent !important;
-    color: var(--text-secondary-color) !important;
-    border: 1px solid transparent !important;
-    border-radius: var(--border-radius-sm) !important;
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-#experience .nav-link:hover {
-    color: var(--text-color) !important;
-    background: rgba(var(--glow-color-rgb), 0.05) !important;
-    border-color: rgba(var(--glow-color-rgb), 0.15) !important;
-}
-
-#experience .nav-link.active {
-    color: var(--primary-color) !important;
-    background: rgba(var(--glow-color-rgb), 0.08) !important;
-    border-color: rgba(var(--glow-color-rgb), 0.25) !important;
-}
-
-#experience .tab-content {
-    background: transparent;
-}
-
-#experience .tab-pane {
-    background: transparent;
-}
-
-.experience-card {
-    background: var(--card-bg);
     border-radius: var(--border-radius);
-    padding: 1.5rem;
-    transition: transform 0.2s ease;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
 }
 
-.experience-header {
+.experience-item:hover {
+    border-color: rgba(var(--accent-color-rgb), 0.2);
+}
+
+.experience-item-header {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
 }
 
-.experience-logo-wrap {
+.experience-item-header:hover {
+    background: rgba(var(--glow-color-rgb), 0.03);
+}
+
+.experience-item-logo {
+    height: 32px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
-.experience-logo {
-    height: 48px;
-    width: auto;
-    border-radius: 8px;
-    object-fit: contain;
-}
-
-.experience-meta {
+.experience-item-company {
     flex: 1;
-    min-width: 0;
-}
-
-.experience-job {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-color);
     line-height: 1.3;
-    margin-bottom: 0.15rem;
 }
 
-.experience-company {
-    font-size: 0.9rem;
-    margin-bottom: 0.15rem;
+.experience-item-arrow {
+    flex-shrink: 0;
+    color: var(--text-secondary-color);
+    opacity: 0.5;
+    transition: transform 0.25s ease;
 }
 
-.experience-company a {
-    color: var(--text-link-color) !important;
-    text-decoration: none;
-    font-weight: 500;
+.experience-item-arrow svg {
+    display: block;
 }
 
-.experience-company a:hover {
-    text-decoration: underline;
+.experience-item-header[aria-expanded="true"] .experience-item-arrow {
+    transform: rotate(180deg);
 }
 
-.experience-date {
+.experience-item-collapse {
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.experience-item-collapse.show {
+    max-height: 2000px;
+}
+
+.experience-item-body {
+    padding: 0 1.25rem 1.25rem;
+    border-top: 1px solid var(--card-border);
+    padding-top: 1rem;
+    margin-top: 0;
+}
+
+.experience-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.experience-item-job {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.experience-item-date {
     font-size: 0.8rem;
     color: var(--text-secondary-color);
     opacity: 0.8;
 }
 
-.experience-link {
-    flex-shrink: 0;
+.experience-item-content {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
-.experience-link .btn {
+.experience-item-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-item-content ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.experience-item-content ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.experience-item-content p {
+    margin-bottom: 0.5rem;
+}
+
+.experience-item-link {
+    margin-top: 0.75rem;
+}
+
+.experience-item-link .btn {
     background: rgba(var(--glow-color-rgb), 0.08);
     color: var(--primary-color);
     border: 1px solid rgba(var(--glow-color-rgb), 0.25);
@@ -391,71 +414,33 @@ header .navbar.animate {
     font-size: 0.8rem;
     font-weight: 500;
     transition: all 0.2s ease;
-    white-space: nowrap;
 }
 
-.experience-link .btn:hover {
+.experience-item-link .btn:hover {
     background: rgba(var(--glow-color-rgb), 0.15);
     border-color: rgba(var(--glow-color-rgb), 0.4);
     color: var(--primary-color);
 }
 
-.experience-body {
-    color: var(--text-color);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.experience-body ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.experience-body ul li {
-    position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    opacity: 0.9;
-}
-
-.experience-body ul li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    opacity: 0.8;
-}
-
-.experience-body p {
-    margin-bottom: 0.5rem;
-}
-
-@media (max-width: 576px) {
-    .experience-header {
-        flex-wrap: wrap;
+@media (min-width: 768px) {
+    .experience-accordion {
+        gap: 1rem;
     }
-    .experience-logo {
+    .experience-item-header {
+        padding: 1.25rem 1.5rem;
+    }
+    .experience-item-logo {
         height: 40px;
     }
-    #experience .experience-container {
-        padding: 1.25rem;
+    .experience-item-company {
+        font-size: 1.05rem;
     }
-    #experience .nav-pills {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        gap: 0.25rem;
-        padding-bottom: 0.5rem;
+    .experience-item-body {
+        padding: 0 1.5rem 1.5rem;
+        padding-top: 1.125rem;
     }
-    #experience .nav-pills::-webkit-scrollbar {
-        display: none;
-    }
-    #experience .nav-link {
-        font-size: 0.78rem;
-        padding: 0.35rem 0.75rem;
+    .experience-item-job {
+        font-size: 1.05rem;
     }
 }
 

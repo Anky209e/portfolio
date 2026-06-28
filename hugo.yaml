@@ -170,21 +170,19 @@ params:
     image: "/images/hero.svg"
     roundImage: false
     content: |-
-      Hi, I'm Ankit Kumar, an AI/ML Engineer and Backend Developer passionate about bridging the gap between complex data science research and production-grade software engineering. 
+      Hi, I'm **Ankit Kumar**, an AI/ML Engineer passionate about building intelligent systems powered by **Large Language Models, Computer Vision, and Reinforcement Learning**. I enjoy turning research ideas into scalable, production-ready AI applications using modern machine learning and software engineering practices.
 
-      Over my career and freelance consulting, I have designed and deployed multiple conversational AI systems and LLM/RAG architectures, including building and fine-tuning transformer models from scratch. During my time at the Indian Space Research Organisation (ISRO), I designed Reinforcement Learning simulators for Lunar landing trajectories and engineered high-throughput telemetry pipelines. 
-
-      Whether it's optimizing physical solvers, training 10+ distinct machine learning architectures, or scaling backend services for thousands of active users, I love building performant, scalable, and intelligent systems.
+      I've worked on AI systems ranging from multimodal and RAG applications to computer vision pipelines and reinforcement learning. During my internship at **ISRO**, I worked on autonomous lunar landing using Reinforcement Learning, gaining hands-on experience with intelligent decision-making systems.
     skills:
       enable: true
-      title: "Here are a few technologies I've been working with recently:"
+      title: "Technologies I work with:"
       items:
-        - "Python & SQL"
-        - "PyTorch & TensorFlow"
-        - "Generative AI & RAG"
-        - "Reinforcement Learning"
-        - "Django & FastAPI"
-        - "Docker & CI/CD"
+        - "Python, C++ & SQL"
+        - "PyTorch, TensorFlow & OpenCV"
+        - "LLMs, RAG & Multimodal AI"
+        - "Computer Vision & Reinforcement Learning"
+        - "FastAPI, Django & Docker"
+        - "Linux, Git & MLOps"
 
   # Experience
   experience:

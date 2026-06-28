@@ -4,61 +4,40 @@
         <h3 class="text-center">{{ .Site.Params.experience.title | default "Experience" }}</h3>
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-10 col-lg-10 py-5">
-                <div class="experience-container">
-                    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
-                        {{ range $index, $element := .Site.Params.experience.items }}
-                        <li class="nav-item" role="presentation">
-                            <button 
-                                class="nav-link{{ if eq $index 0 }} active{{ end }}" 
-                                id='{{ (printf "%s-%s" .company .date) | urlize }}-tab'
-                                data-bs-toggle="pill"
-                                data-bs-target='#{{ (printf "%s-%s" .company .date) | urlize }}' 
-                                type="button" role="tab"
-                                aria-controls='{{ (printf "%s-%s" .company .date) | urlize }}'
-                                aria-selected="{{ if eq $index 0 }}true{{ else }}false{{ end }}"
-                            >
-                                {{ .company }}
-                            </button>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    <div class="tab-content" id="pills-tabContent">
-                        {{ range $index, $element := .Site.Params.experience.items }}
-                        <div 
-                            class="tab-pane fade{{ if eq $index 0 }} show active{{ end }}" 
-                            role="tabpanel"
-                            id='{{ (printf "%s-%s" .company .date) | urlize }}'
-                            aria-labelledby='{{ (printf "%s-%s" .company .date) | urlize }}-tab'
-                        >
-                            <div class="experience-card">
-                                <div class="experience-header">
-                                    {{ if .logo }}
-                                    <div class="experience-logo-wrap">
-                                        <img class="experience-logo" src="{{ .logo }}" alt="{{ .company }}">
-                                    </div>
-                                    {{ end }}
-                                    <div class="experience-meta">
-                                        <div class="experience-job">{{ .job }}</div>
-                                        <div class="experience-company">
-                                            <a href="{{ .companyUrl }}" target="_blank" rel="noopener">{{ .company }}</a>
-                                        </div>
-                                        <div class="experience-date">{{ .date }}</div>
-                                    </div>
-                                    {{ if .featuredLink.enable | default false }}
-                                    <div class="experience-link">
-                                        <a class="btn btn-sm" href="{{ .featuredLink.url | default "#" }}" target="_blank" rel="noopener">
-                                            {{ .featuredLink.name | default "View" }}
-                                        </a>
-                                    </div>
-                                    {{ end }}
+                <div class="experience-accordion">
+                    {{ range $index, $element := .Site.Params.experience.items }}
+                    <div class="experience-item">
+                        <div class="experience-item-header" data-bs-toggle="collapse" data-bs-target="#exp-{{ $index }}" aria-expanded="{{ if eq $index 0 }}true{{ else }}false{{ end }}" role="button" tabindex="0">
+                            {{ if .logo }}
+                            <img class="experience-item-logo" src="{{ .logo }}" alt="{{ .company }}">
+                            {{ end }}
+                            <span class="experience-item-company">{{ .company }}</span>
+                            <span class="experience-item-arrow">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="experience-item-collapse{{ if eq $index 0 }} show{{ end }}" id="exp-{{ $index }}" data-bs-parent="#experience-accordion">
+                            <div class="experience-item-body">
+                                <div class="experience-item-meta">
+                                    <div class="experience-item-job">{{ .job }}</div>
+                                    <div class="experience-item-date">{{ .date }}</div>
                                 </div>
-                                <div class="experience-body">
+                                <div class="experience-item-content">
                                     {{ .content | markdownify }}
                                 </div>
+                                {{ if .featuredLink.enable | default false }}
+                                <div class="experience-item-link">
+                                    <a class="btn" href="{{ .featuredLink.url | default "#" }}" target="_blank" rel="noopener">
+                                        {{ .featuredLink.name | default "View" }}
+                                    </a>
+                                </div>
+                                {{ end }}
                             </div>
                         </div>
-                        {{ end }}
                     </div>
+                    {{ end }}
                 </div>
             </div>
         </div>
