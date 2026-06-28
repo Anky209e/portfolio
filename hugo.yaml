@@ -161,7 +161,7 @@ params:
       customIcons:
         - icon: /fav.png
           name: Modelsmith
-          url: "https://modelsmith.up.railway.app"
+          url: "https://modelsmith.app/"
 
   # About
   about:
@@ -191,6 +191,19 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - job: "AI/ML Research"
+        company: "Indian Institute of Technology, Guwahati"
+        companyUrl: "https://www.iitg.ac.in"
+        date: "Jun 2026 - Present"
+        logo: "/images/iitg-logo.jpg"
+        info:
+          enable: true
+          content: "Conducting research on next-generation AI, ML, and LLM architectures."
+        content: |
+          * Conducting research on next-generation AI, Machine Learning, and Large Language Model (LLM) architectures with a focus on improving efficiency, reasoning, and scalability.
+          * Exploring state-of-the-art Transformer architectures, multimodal models, Mixture of Experts (MoE), diffusion models, and emerging foundation model techniques.
+          * Designing and implementing deep learning models using PyTorch and Python for experimentation and evaluation.
+
       - job: "Freelance AI/ML Engineer | Consultant"
         company: "Freelance Consulting"
         companyUrl: "#"
@@ -207,7 +220,8 @@ params:
       - job: "Project Intern"
         company: "ISRO - Indian Space Research Organisation"
         companyUrl: "https://www.isro.gov.in"
-        date: "May 2024 – June 2024"
+        logo: "/images/isro-logo.png"
+        date: "May 2024 – July 2024"
         featuredLink:
           enable: true
           name: "View the project"
@@ -331,7 +345,7 @@ params:
         image: /images/projects/modelsmith.png
         featured:
           name: Visit Site
-          link: https://modelsmith.app
+          link: https://modelsmith.app/
         badges:
           - "Django"
           - "Deep Learning"
