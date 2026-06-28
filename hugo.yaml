@@ -220,6 +220,7 @@ params:
       - job: "Project Intern"
         company: "ISRO - Indian Space Research Organisation"
         companyUrl: "https://www.isro.gov.in"
+        logo: "/images/isro-logo.png"
         date: "May 2024 – June 2024"
         featuredLink:
           enable: true
