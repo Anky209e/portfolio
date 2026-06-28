@@ -264,123 +264,199 @@ header .navbar.animate {
 
 #experience h3 {
     color: var(--text-secondary-color) !important;
-}
-
-#experience * {
-    background-color: transparent !important;
-}
-
-#experience .tab-pane > * {
-    opacity: 0.9;
-}
-
-#experience .tab-pane small {
-    opacity: 0.8;
-}
-
-#experience .tab-pane ul {
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-
-#experience .experience-container .tab-content > .tab-pane p {
-    padding: 1% 0;
-    margin: 0;
+    margin-bottom: 0.5rem;
 }
 
 #experience .experience-container {
-    background-color: var(--secondary-color) !important;
-    border-radius: .75rem;
-    box-shadow: 0px 8px 56px rgba(var(--shadow-color-rgb), 0.1);
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(var(--shadow-color-rgb), 0.08);
 }
 
-#experience .nav-item .nav-link {
-    color: var(--text-color) !important;
-    border-bottom: 2px solid transparent; 
-    border-radius: 0%;
-    transition: none;
+#experience .nav-pills {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem !important;
+}
+
+#experience .nav-item {
+    background: transparent;
+}
+
+#experience .nav-link {
+    background: transparent !important;
+    color: var(--text-secondary-color) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--border-radius-sm) !important;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
     cursor: pointer;
+    white-space: nowrap;
 }
 
-#experience .nav-item .nav-link.active {
+#experience .nav-link:hover {
     color: var(--text-color) !important;
-    border-bottom: 2px solid var(--primary-color); 
-    opacity: 0.8;
+    background: rgba(var(--glow-color-rgb), 0.05) !important;
+    border-color: rgba(var(--glow-color-rgb), 0.15) !important;
 }
 
-#experience .nav-item .nav-link.active:hover { 
-    transition: none !important;
+#experience .nav-link.active {
+    color: var(--primary-color) !important;
+    background: rgba(var(--glow-color-rgb), 0.08) !important;
+    border-color: rgba(var(--glow-color-rgb), 0.25) !important;
 }
 
-#experience .nav-item .nav-link:hover {
-    border-bottom: 2px solid var(--primary-color);
-    opacity: 0.8;
+#experience .tab-content {
+    background: transparent;
 }
 
-#experience a {
-    opacity: 0.9;
-    display: inline-block;
-    text-decoration: none;
-    color: var(--text-link-color) !important;
+#experience .tab-pane {
+    background: transparent;
 }
 
-#experience a::after {
-    content: "";
-    display: block;
-    width: 0px;
-    height: 2px;
-    bottom: 0.37em;
-    background-color: var(--primary-color);
-    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
-    opacity: 0.5;
+.experience-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: transform 0.2s ease;
 }
 
-#experience a:hover::after, #experience a:focus::after, #experience a:active::after {
-    width: 100%;
+.experience-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
 }
 
-#experience .experience-container .tab-content .tab-pane ul {
-    overflow: hidden;
-    list-style: none;
-    margin-bottom: 0;
+.experience-logo-wrap {
+    flex-shrink: 0;
 }
 
-#experience .experience-container .tab-content .tab-pane ul li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-left: 20px;
-}
-
-#experience .experience-container .tab-content .tab-pane ul li::before {
-    content: "▹";
-    color: var(--primary-color);
-    position: absolute;
-    left: 0px;
-}
-
-#experience .experience-container .tab-content .tab-pane .featuredLink a::after {
-    display: block;
+.experience-logo {
+    height: 48px;
     width: auto;
-    height: auto;
-    bottom: 0em;
-    background-color: transparent;
-    transition: none;
-    opacity: 1;
+    border-radius: 8px;
+    object-fit: contain;
 }
 
-#experience .experience-container .tab-content .tab-pane .featuredLink a.btn {
-    border: 1px solid var(--primary-color);
-    border-radius: .75rem;
-    transition: none;
+.experience-meta {
+    flex: 1;
+    min-width: 0;
 }
 
-#experience .experience-container .tab-content .tab-pane .featuredLink a.btn:focus {
-    box-shadow: none;
+.experience-job {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.3;
+    margin-bottom: 0.15rem;
 }
 
-#experience .experience-container .tab-content .tab-pane .featuredLink a.btn:hover {
-    color: var(--text-color) !important;
-    opacity: 0.7;
+.experience-company {
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+}
+
+.experience-company a {
+    color: var(--text-link-color) !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.experience-company a:hover {
+    text-decoration: underline;
+}
+
+.experience-date {
+    font-size: 0.8rem;
+    color: var(--text-secondary-color);
+    opacity: 0.8;
+}
+
+.experience-link {
+    flex-shrink: 0;
+}
+
+.experience-link .btn {
+    background: rgba(var(--glow-color-rgb), 0.08);
+    color: var(--primary-color);
+    border: 1px solid rgba(var(--glow-color-rgb), 0.25);
+    border-radius: var(--border-radius-sm);
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.experience-link .btn:hover {
+    background: rgba(var(--glow-color-rgb), 0.15);
+    border-color: rgba(var(--glow-color-rgb), 0.4);
+    color: var(--primary-color);
+}
+
+.experience-body {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.experience-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-body ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.experience-body ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.experience-body p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .experience-header {
+        flex-wrap: wrap;
+    }
+    .experience-logo {
+        height: 40px;
+    }
+    #experience .experience-container {
+        padding: 1.25rem;
+    }
+    #experience .nav-pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 0.25rem;
+        padding-bottom: 0.5rem;
+    }
+    #experience .nav-pills::-webkit-scrollbar {
+        display: none;
+    }
+    #experience .nav-link {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.75rem;
+    }
 }
 
 /* Education */

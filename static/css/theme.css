@@ -267,30 +267,8 @@ body {
     padding: 0.5em 0.8em;
 }
 
-/* Tab navigation pills */
-.nav-pills .nav-link {
-    color: var(--text-secondary-color) !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    border: 1px solid transparent !important;
-    transition: all 0.3s ease;
-}
-
-.nav-pills .nav-link.active {
-    background-color: rgba(var(--glow-color-rgb), 0.08) !important;
-    color: var(--primary-color) !important;
-    border: 1px solid rgba(var(--glow-color-rgb), 0.25) !important;
-}
-
 .bg-transparent {
     background-color: transparent !important;
-}
-
-.experience-logo {
-    height: 20px;
-    width: auto;
-    border-radius: 4px;
-    vertical-align: middle;
-    margin-right: 6px;
 }
 
 #footer-socialNetworks-github-svg-path{
