@@ -191,6 +191,19 @@ params:
     enable: true
     # title: "Custom Name"
     items:
+      - job: "AI/ML Research"
+        company: "Indian Institute of Technology, Guwahati"
+        companyUrl: "https://www.iitg.ac.in"
+        date: "Jun 2026 - Present"
+        logo: "/images/iitg-logo.jpg"
+        info:
+          enable: true
+          content: "Conducting research on next-generation AI, ML, and LLM architectures."
+        content: |
+          * Conducting research on next-generation AI, Machine Learning, and Large Language Model (LLM) architectures with a focus on improving efficiency, reasoning, and scalability.
+          * Exploring state-of-the-art Transformer architectures, multimodal models, Mixture of Experts (MoE), diffusion models, and emerging foundation model techniques.
+          * Designing and implementing deep learning models using PyTorch and Python for experimentation and evaluation.
+
       - job: "Freelance AI/ML Engineer | Consultant"
         company: "Freelance Consulting"
         companyUrl: "#"

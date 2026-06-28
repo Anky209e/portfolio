@@ -18,6 +18,7 @@
                                 data-bs-target='#{{ (printf "%s-%s" .company .date) | urlize }}'
                                 aria-controls='{{ (printf "%s-%s" .company .date) | urlize }}' 
                             >
+                                {{ if .logo }}<img class="experience-logo" src="{{ .logo }}" alt="{{ .company }}">{{ end }}
                                 {{ .company }}
                             </div>
                         </li>
@@ -32,6 +33,7 @@
                                 data-bs-target='#{{ (printf "%s-%s" .company .date) | urlize }}' 
                                 aria-controls='{{ (printf "%s-%s" .company .date) | urlize }}'
                             >
+                                {{ if .logo }}<img class="experience-logo" src="{{ .logo }}" alt="{{ .company }}">{{ end }}
                                 {{ .company }}
                             </div>
                         </li>

@@ -285,6 +285,14 @@ body {
     background-color: transparent !important;
 }
 
+.experience-logo {
+    height: 20px;
+    width: auto;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
 #footer-socialNetworks-github-svg-path{
     fill: #3C3836;
 }
